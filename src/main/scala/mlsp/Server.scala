@@ -1,7 +1,7 @@
 package mlsp
 
 import org.eclipse.lsp4j.services.LanguageClient
-import org.eclipse.lsp4j.{InitializeParams, InitializeResult, ServerCapabilities, ServerInfo}
+import org.eclipse.lsp4j.{_}
 import java.util.concurrent.CompletableFuture
 import org.eclipse.lsp4j.jsonrpc.services.JsonRequest
 
@@ -19,6 +19,10 @@ class Server() {
     val result = new InitializeResult(capabilities, serverInfo)
     CompletableFuture.completedFuture(result)
   }
+
+  @JsonRequest("initialized")
+  def initialized(params: InitializedParams): CompletableFuture[Unit] =
+    CompletableFuture.completedFuture()
 }
 
 object Server {
