@@ -1,0 +1,3 @@
+[submodule "mlscript"]
+	path = mlscript
+	url = git@github.com:hkust-taco/mlscript.git
